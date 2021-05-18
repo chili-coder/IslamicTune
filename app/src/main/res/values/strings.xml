@@ -1,0 +1,34 @@
+<resources>
+
+    <string name="app_name">Islamic Tune</string>
+
+
+    <string name="tittle_en">Islamic Tune</string>
+    <string name="subtitle_en"> Allah will never let you down.</string>
+    <string name="subtitle2_en">Smile and Say</string>
+    <string name="subtitle3_en">Alhamdulillah</string>
+    <string name="sohaghlab_en">Sohagh Lab</string>
+    <string name="laguage">English</string>
+
+
+    ///clock
+
+    <string name="time">01:24:35 AM</string>
+    <string name="date">Monday, 24/May/2021</string>
+
+    //dynamic text
+
+    <string name="daytext">PRAY FOR PALESTINE</string>
+    <string name="subdaytitle">The real goal of life in this Dunya (world) is all about obeying and pleasing Allah to achieve a place in Jannah.</string>
+
+    ///card
+    <string name="shurah">Surah</string>
+    <string name="shurah2">Surahs of the Quran (1 to 114)</string>
+    <string name="queranteloat"> The Holy Quran</string>
+    <string name="queranteloat2">QURAN PARA’S 1 TO 30 IN ARABIC</string>
+    <string name="ringtone">Islamic Ringtones</string>
+    <string name="ringtone2">Islamic ringtones in all languages</string>
+
+
+
+</resources>

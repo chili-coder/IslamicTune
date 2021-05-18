@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ইসলামিক টিউন</string>
+
+    <string name="tittle_en">ইসলামিক টিউন</string>
+    <string name="subtitle_en"> আল্লাহ আপনাকে কখনও হতাশ করবেন না।</string>
+    <string name="subtitle2_en">হাসি খুশি বলুন</string>
+    <string name="subtitle3_en">আলহামদুলিল্লাহ</string>
+    <string name="sohaghlab_en">সোহাগ ল্যাব</string>
+    <string name="laguage">বাংলা</string>
+
+
+    ///clock
+
+    <string name="time">0১:১৫:৫২ এএম</string>
+    <string name="date">সোমবার, ২৫ / মে / ২০২১</string>
+
+    //dynamic text
+
+    <string name="daytext">PRAY FOR PALESTINE</string>
+    <string name="subdaytitle">এই দুনিয়াতে (দুনিয়া) জীবনের আসল লক্ষ্য হল জান্নাতে স্থান অর্জনের জন্য আল্লাহর আনুগত্য করা এবং সন্তুষ্ট করা।</string>
+
+    ///card
+    <string name="shurah">সূরা</string>
+    <string name="shurah2">কুরআনের সমস্ত সূরা</string>
+    <string name="queranteloat">কুরআন তেলাওয়াত</string>
+    <string name="queranteloat2">আরবী ভাষায় কুরআন তেলোয়াত ১-৩০ পাড়া</string>
+    <string name="ringtone">ইসলামিক রিংটোন</string>
+    <string name="ringtone2">সকল ভাষায় ইসলামিক রিংটোন</string>
+
+</resources>
