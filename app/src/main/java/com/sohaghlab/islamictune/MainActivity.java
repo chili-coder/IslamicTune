@@ -2,6 +2,7 @@ package com.sohaghlab.islamictune;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -10,16 +11,24 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView movetext;
+    TextView movetext,  daY, monTh,yyy,tiMe;
     TextView changeLanguage;
+
+    ConstraintLayout shuraCard, quranCard;
+
 
 
 
@@ -39,11 +48,85 @@ public class MainActivity extends AppCompatActivity {
 
         changeLanguage=findViewById(R.id.enChange);
 
+        shuraCard=findViewById(R.id.shura);
+        quranCard=findViewById(R.id.quran);
+        monTh=findViewById(R.id.monthh);
+        daY=findViewById(R.id.timeID);
+        yyy=findViewById(R.id.yearrr);
+       // tiMe=findViewById(R.id.timeeee);
+
+       Thread thread = new Thread(){
+            @Override
+            public void run(){
+
+                try {
+                    while (!isInterrupted()){
+                        Thread.sleep(1000);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                tiMe=findViewById(R.id.timeeee);
+                                long date = System.currentTimeMillis();
+                                SimpleDateFormat simpleDateFormat =new SimpleDateFormat("hh : mm : ss a");
+                                String dateString = simpleDateFormat.format(date);
+                                tiMe.setText(dateString);
+
+                            }
+                        });
+                    }
+                }catch (Exception e){
+                   // tiMe.setText(R.string.app_name);
+
+                }
+
+            }
+        };
+       thread.start();
+
+
+
+        Date currentTime = Calendar.getInstance().getTime();
+        String formateDate = DateFormat.getDateInstance(DateFormat.FULL).format(currentTime);
+
+        String[] splitDate =formateDate.split(",");
+
+        Log.d("myLog",currentTime.toString());
+        Log.d("myLog",formateDate);
+        Log.d("myLog",splitDate[0].trim());
+        Log.d("myLog",splitDate[1].trim());
+        Log.d("myLog",splitDate[2].trim());
+
+
+        daY.setText(splitDate[0]);
+        monTh.setText(splitDate[1]);
+        yyy.setText(splitDate[2]);
+
+
+
+
+
+
+
+
+
+
+
         changeLanguage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 showChangeLaguageDialog();
+
+
+            }
+        });
+
+        shuraCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this,SuraActivity.class);
+                startActivity(intent);
 
 
             }
@@ -133,4 +216,10 @@ public class MainActivity extends AppCompatActivity {
         String language= preferences.getString("My_Lang","");
         setLocale(language);
     }
+/*
+    private String getCurrentTime(){
+        return  new SimpleDateFormat("hh:mm a" ,Locale.getDefault()).format(new Date());
+    }
+
+ */
 }
