@@ -15,50 +15,11 @@ import java.util.List;
 
 public class SurahActivity extends AppCompatActivity {
 
-    ViewPager2 viewPager2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_surah);
-
-        viewPager2=findViewById(R.id.viewimageslider);
-
-        //now add list of slide & image
-
-        List<SlideItem>slideItems = new ArrayList<>();
-        slideItems.add(new SlideItem(R.drawable.q1));
-        slideItems.add(new SlideItem(R.drawable.q2));
-        slideItems.add(new SlideItem(R.drawable.q3));
-      //  slideItems.add(new SlideItem(R.drawable.q4));
-
-        viewPager2.setAdapter(new SlideAdapter(slideItems));
-
-        ////now clip to padding and clip to children flase
-
-        viewPager2.setClipToPadding(false);
-        viewPager2.setClipChildren(false);
-
-        //set offscreen page limit
-
-        viewPager2.setOffscreenPageLimit(3);
-        viewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
-
-        ///make composite page transfer to set
-
-        CompositePageTransformer compositePageTransformer = new CompositePageTransformer();
-        compositePageTransformer.addTransformer(new MarginPageTransformer(40));
-        compositePageTransformer.addTransformer(new ViewPager2.PageTransformer() {
-            @Override
-            public void transformPage(@NonNull View page, float position) {
-                page.setScaleY(1);
-                // here 1 mean all page lenth will be same
-
-            }
-        });
-
-        viewPager2.setPageTransformer(compositePageTransformer);
-
-
 
 
     }

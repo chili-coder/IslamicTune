@@ -121,16 +121,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        shuraCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this,SuraActivity.class);
-                startActivity(intent);
-
-
-            }
-        });
 
 
 
